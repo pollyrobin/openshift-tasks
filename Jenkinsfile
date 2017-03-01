@@ -1,5 +1,4 @@
-pipeline {
-    agent { docker 'maven:3.3.3' }
+node('jdk8') {
     stages {
         stage('build') {
             steps {
