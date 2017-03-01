@@ -4,7 +4,6 @@ node('jdk8') {
    def mvnCmd = "${mvnHome}/bin/mvn -s ${env.JENKINS_HOME}/settings.xml"
    def ocCmd = "/usr/bin/oc --token=`cat /var/run/secrets/kubernetes.io/serviceaccount/token` --server=https://openshift.default.svc.cluster.local --certificate-authority=/run/secrets/kubernetes.io/serviceaccount/ca.crt"
 
-
    stage 'Build'
    git url: 'https://github.com/OpenShiftDemos/openshift-tasks.git'
    def v = version()
